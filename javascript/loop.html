@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+</head>
+
+<body>
+<div id="a">
+  <div id="b">
+  </div>
+</div>;
+
+<script>
+function decorateDivFunction(newDiv){
+   console.log('decorateDivFunction');
+}
+function appendChildren(decorateDivFunction) {
+  var allDivs = document.getElementsByTagName("div");
+  console.log(allDivs.length);
+  let divlength = allDivs.length;
+  for (var i = 0; i < divlength; i++) {
+    var newDiv = document.createElement("div");
+    decorateDivFunction(newDiv);
+    allDivs[i].appendChild(newDiv);
+  }
+}	
+appendChildren(decorateDivFunction);
+	</script>
+</body>
+</html>

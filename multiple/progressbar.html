@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Untitled Document</title>
+    </head>
+    <body>
+        <progress id="loading-bar" value="0" max="100"></progress>
+        <script>
+            function update(increase) {
+                // Write the code that goes here
+                progressbar = document.getElementById("loading-bar");
+                $promax = progressbar.value + increase;
+                if($promax >= 100){
+                    progressbar.max = progressbar.value + increase;
+                    console.log(progressbar.max);
+                }
+                if (progressbar.value >= 100) {
+                    progressbar.max = progressbar.value;
+                    progressbar.value += increase;
+                    console.log(progressbar.max);
+                    return true;
+                } else {
+                    progressbar.value += increase;
+                    console.log(progressbar.max);
+                    return false;
+                }
+            }
+
+            // Example case. 
+            console.log(update(50));
+            // should return false and loading-bar's value should be 50.
+            console.log(update(55));
+            // should return true and loading-bar's value should be 100.
+        </script>
+    </body>
+</html>

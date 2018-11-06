@@ -1,0 +1,16 @@
+	function update(increase) {
+  // Write the code that goes here
+    progressbar = document.getElementById("loading-bar");
+ 		
+        progressbar.value += increase;
+      if(progressbar.value >= 100){
+      	progressbar.max = progressbar.value;
+      	return true;
+      }else{
+      	
+      	return false;
+      }
+   
+    
+
+}

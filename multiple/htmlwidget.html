@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div id='rating'>
+  <span>*</span>
+  <span>*</span>
+  <span>*</span>
+  <span>*</span>
+  <span>*</span>
+</div>
+<script>
+function setup() {
+  // Write your code here.
+  spans = document.getElementsByTagName("span");
+  //console.log(spans);
+ 
+  for(var i = 0, l = spans.length; i < l; i++){
+	spans[i].onclick = (function(i, spans){
+
+		      return function(){
+		      	for(var k = 0, l = spans.length; k < l; k++){
+					//spans[k].spanindex = i;
+					spans[k].classList.remove("active");
+		      	}
+		      	for(var k = 0, l = i+1; k < l; k++){
+					//spans[k].spanindex = i;
+					spans[k].classList.add("active");
+					console.log(k);
+		      	}
+			  };
+	  })(i, spans);
+  	//spans[i].classList.add("active");
+  }
+}
+setup();
+
+//document.getElementsByTagName("span")[2].click();
+//console.log(document.body.innerHTML);
+	</script>
+</body>
+</html>
